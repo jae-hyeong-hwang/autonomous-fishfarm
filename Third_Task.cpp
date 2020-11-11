@@ -164,16 +164,16 @@ dispatch(m_ref_state);
 
 void lawnmowerPattern()
 { //define waypoints
-  int lon_wp = [h, h, m_estate.lon, m_estate.lon, h, h];
-  int lat_wp = [m_estate.lat, m_estate.lat+s, m_estate.lat+s, m_estate+2*s, m_estate+2*s, m_estate+3*s];
+  float lon_wp = [h, h, m_estate.lon, m_estate.lon, h, h];
+  float lat_wp = [m_estate.lat, m_estate.lat+s, m_estate.lat+s, m_estate+2*s, m_estate+2*s, m_estate+3*s];
 
 	s = 25;
 	h = 10;
 
 for (int i = 1 ; i <= 6 ; i++)
 {
-  m_follow_ref.lat = lat_wp[i];
-  m_follow_ref.lon = lon_wp[i];
+  m_ref.lat = lat_wp[i];
+  m_ref.lon = lon_wp[i];
 
   if (abs(m_estate.lon - lon_wp[i]) <= 0.5 && abs(m_state.lat - lat_wp[i]) <= 0.5 )
   return;
@@ -184,7 +184,7 @@ for (int i = 1 ; i <= 6 ; i++)
     waitForMessages(10.0);
   }
 }
-dispatch(m_follow_ref);
+dispatch(m_ref_state);
 }
 
 
