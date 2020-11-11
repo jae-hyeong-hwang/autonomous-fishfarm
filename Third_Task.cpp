@@ -159,11 +159,12 @@ m_ref.lat = m_estate.lat;
 m_ref.lon = m_estate.lon;
 m_ref.radius = m_args.loiter_radius;
 
-float lon_wp = [h, h, m_estate.lon, m_estate.lon, h, h];
-float lat_wp = [m_estate.lat, m_estate.lat+s, m_estate.lat+s, m_estate+2*s, m_estate+2*s, m_estate+3*s];
-
 s = 25;
 h = 10;
+
+int lon_wp = [h, h, m_estate.lon, m_estate.lon, h, h];
+int lat_wp = [m_estate.lat, m_estate.lat+s, m_estate.lat+s, m_estate+2*s, m_estate+2*s, m_estate+3*s];
+
 
 for (int i = 1 ; i <= 6 ; i++)
 {
