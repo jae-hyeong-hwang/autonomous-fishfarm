@@ -1,3 +1,12 @@
+/*Send PlanControl command to start a plan consisting of a single FollowReference maneuver 
+(this will put the vehicle executing the FollowReference)
+
+Guide the vehicle by sending Reference messages and listening to FollowRefState and Abort messages 
+(this will send each waypoint as a Reference message, when the vehicle is close change to the next waypoint, 
+remember that Reference needs to be sent periodically with the current waypoint)
+
+If Abort is received, stop controlling the vehicle immediately
+*/
 
 #include <DUNE/DUNE.hpp>
 
